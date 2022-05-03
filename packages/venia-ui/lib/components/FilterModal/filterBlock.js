@@ -12,6 +12,7 @@ import PriceSlider from '../../../../venia-concept/src/components/PriceSlider';
 import Icon from '../Icon';
 import FilterList from './FilterList';
 import defaultClasses from './filterBlock.module.css';
+import ColorFilter from '../../../../venia-concept/src/components/ColorFilter/colorFilter';
 
 const FilterBlock = props => {
     const {
@@ -67,7 +68,22 @@ const FilterBlock = props => {
 
     const list = isExpanded ? (
         <Form className={classes.list}>
-            {group !== 'price' ? (
+            {group === 'price' ? (
+                <PriceSlider
+                    filterApi={filterApi}
+                    filterState={filterState}
+                    name={name}
+                    group={group}
+                    onApply={onApply}
+                />
+            ) : group === 'color' ? (
+                <ColorFilter
+                    filterApi={filterApi}
+                    group={group}
+                    onApply={onApply}
+                    items={items}
+                />
+            ) : (
                 <FilterList
                     filterApi={filterApi}
                     filterState={filterState}
@@ -77,17 +93,10 @@ const FilterBlock = props => {
                     items={items}
                     onApply={onApply}
                 />
-            ) : (
-                <PriceSlider
-                    filterApi={filterApi}
-                    name={name}
-                    group={group}
-                    onApply={onApply}
-                />
             )}
         </Form>
     ) : null;
-// console.log(filterState)
+    // console.log(filterState)
     return (
         <li
             className={classes.root}
