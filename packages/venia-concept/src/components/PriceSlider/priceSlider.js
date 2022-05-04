@@ -53,9 +53,21 @@ const PriceSlider = props => {
                     defaultValue={price}
                     value={price}
                     onChange={rangeChangeHandler}
+                    handleStyle={{
+                        height: '38px',
+                        width: '38px',
+                        backgroundColor: 'rgb(32, 13, 69)',
+                        marginTop: '-19px',
+                        border: 'none'
+                    }}
+                    railStyle={{
+                        backgroundColor: 'rgb(109, 108, 110)',
+                        height: '2px'
+                    }}
+                    trackStyle={[{backgroundColor:'rgb(203, 104, 82)', height:'2px'}]}
                 />
             </div>
-            <Button type='button' onClick={priceAplyHandler}>
+            <Button type="button" onClick={priceAplyHandler}>
                 <FontAwesomeIcon height={16} icon={faRefresh} width={16} />
             </Button>
         </div>
