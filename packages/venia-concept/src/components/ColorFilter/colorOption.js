@@ -3,24 +3,33 @@ import { useStyle } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './colorOption.module.css';
 
 const ColorOption = props => {
-    const { color, filterApi, group, item, onApply } = props;
+    const { color, filterApi, filterState, group, item, onApply } = props;
     const { addItem, removeGroup } = filterApi;
+    const { title } = item;
 
     const classes = useStyle(defaultClasses, props.classes);
     const itemColor = color.split('_')[0];
 
+    const filterStateArray = filterState ? [...filterState] : [];
+
+    const isSelectedColor = filterStateArray[0]?.title === title;
+
     const changeColorFilterHandler = () => {
-        removeGroup({group})
+        removeGroup({ group });
         addItem({ group, item });
         onApply({ group, item });
     };
 
     return (
         <div
-            onClick={changeColorFilterHandler}
-            className={classes.colorFilterOption}
-            style={{ backgroundColor: itemColor }}
-        />
+            className={isSelectedColor ? classes.colorFilterOptionBorder : null}
+        >
+            <div
+                onClick={changeColorFilterHandler}
+                className={classes.colorFilterOption}
+                style={{ backgroundColor: itemColor }}
+            />
+        </div>
     );
 };
 export default ColorOption;

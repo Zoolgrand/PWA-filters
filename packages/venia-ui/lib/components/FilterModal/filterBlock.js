@@ -79,6 +79,7 @@ const FilterBlock = props => {
             ) : group === 'color' ? (
                 <ColorFilter
                     filterApi={filterApi}
+                    filterState={filterState}
                     group={group}
                     onApply={onApply}
                     items={items}

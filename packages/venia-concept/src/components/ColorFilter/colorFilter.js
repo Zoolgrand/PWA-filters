@@ -4,7 +4,7 @@ import defaultClasses from './colorFilter.module.css';
 import ColorOption from './colorOption';
 
 const ColorFilter = props => {
-    const { filterApi, group, items, onApply } = props;
+    const { filterApi, group, items, onApply, filterState } = props;
     const classes = useStyle(defaultClasses, props.classes);
 
     const colorFilterOptions = items
@@ -12,6 +12,7 @@ const ColorFilter = props => {
               <ColorOption
                   color={item.title}
                   filterApi={filterApi} 
+                  filterState={filterState}
                   group={group}
                   onApply={onApply}
                   item={item}
