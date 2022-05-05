@@ -11,7 +11,7 @@ const ColorFilter = props => {
         ? items.map(item => (
               <ColorOption
                   color={item.title}
-                  filterApi={filterApi} 
+                  filterApi={filterApi}
                   filterState={filterState}
                   group={group}
                   onApply={onApply}

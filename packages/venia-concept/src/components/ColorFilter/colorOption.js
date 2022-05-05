@@ -22,7 +22,11 @@ const ColorOption = props => {
 
     return (
         <div
-            className={isSelectedColor ? classes.colorFilterOptionBorder : null}
+            className={
+                !isSelectedColor
+                    ? classes.colorFilterOptionWrap
+                    : `${classes.colorFilterOptionWrap} ${classes.activeColorBorder}`
+            }
         >
             <div
                 onClick={changeColorFilterHandler}

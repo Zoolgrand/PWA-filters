@@ -1,34 +1,63 @@
-.sliderWrap{
-    width: 225px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.priceInput input {
-    width: 50px;
-}
-.priceInput{
+.priceSlider {
     width: 100%;
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 1fr 1fr;
+   
 }
-.priceSlider{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+
+.priceSlider button {
+
+    border: 1px solid rgb(32, 13, 69);
+    border-radius: 7px;
+    box-sizing: border-box;
+    height: 44px;
+    width: 44px;
 }
-.priceSlider button{
-    height: 25px;
-    width: 25px;
-    margin-right: 5px;
-    background-color: gray;
-    min-width: 35px;
-    min-height: 35px;
-    margin-left: 5px;
+
+.priceControll {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 5fr 1fr;
+}
+
+.priceInput {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.priceInput input {
+    border: 1px solid rgb(109, 108, 111);
+    font-family: var(--venia-global-fontFamily-Asap);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 44px;
+    line-height: 17px;
+    padding-bottom: 13px;
+    padding-inline-end: 13px;
+    padding-inline-start: 13px;
+    padding-top: 13px;
+    width: 118px;
+}
+.priceRangeContainer{
+    align-items: center;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 44px;
+}
+.rangeContainerCurrency{
+    display: flex;
+    font-family: var(--venia-global-fontFamily-Asap);
+    font-size: 15px;
+    font-weight: 500;
+    justify-self: center;
+    line-height: 17px;
+    padding-bottom: 0;
+
+    padding-inline-end: 0;
+
+    padding-inline-start: 0;
+
 }
