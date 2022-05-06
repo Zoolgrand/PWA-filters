@@ -3,7 +3,7 @@
     display: grid;
     grid-gap: 20px;
     grid-template-rows: 1fr 1fr;
-   
+
 }
 
 .priceSlider button {
@@ -41,13 +41,15 @@
     padding-top: 13px;
     width: 118px;
 }
-.priceRangeContainer{
+
+.priceRangeContainer {
     align-items: center;
     display: grid;
     grid-gap: 15px;
     grid-template-columns: 1fr 44px;
 }
-.rangeContainerCurrency{
+
+.rangeContainerCurrency {
     display: flex;
     font-family: var(--venia-global-fontFamily-Asap);
     font-size: 15px;
@@ -55,9 +57,7 @@
     justify-self: center;
     line-height: 17px;
     padding-bottom: 0;
-
     padding-inline-end: 0;
-
     padding-inline-start: 0;
 
 }

@@ -14,11 +14,10 @@ const Range = createSliderWithTooltip(Slider.Range);
 const PriceSlider = props => {
     const classes = useStyle(defaultClasses, props.classes);
 
-    const { filterApi, name, group, onApply } = props;
+    const { filterApi, group, onApply } = props;
 
     const talonProps = usePriceSlider({
         filterApi,
-        name,
         onApply,
         group
     });
@@ -28,6 +27,7 @@ const PriceSlider = props => {
         changeMaxPriceHandler,
         rangeChangeHandler,
         priceAplyHandler,
+        priceResetHandler,
         price
     } = talonProps;
 
@@ -46,7 +46,7 @@ const PriceSlider = props => {
                         value={price[1]}
                     />
                 </div>
-                <button type="button" onClick={priceAplyHandler}>
+                <button type="button" onClick={priceResetHandler}>
                     <FontAwesomeIcon
                         icon={faArrowRotateRight}
                         height={14.5}
@@ -62,6 +62,7 @@ const PriceSlider = props => {
                     defaultValue={price}
                     value={price}
                     onChange={rangeChangeHandler}
+                    onAfterChange={priceAplyHandler}
                     handleStyle={{
                         height: '38px',
                         width: '38px',

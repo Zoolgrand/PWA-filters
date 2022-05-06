@@ -80,7 +80,7 @@ const Footer = props => {
                         <li>
                             <Instagram size={20} />
                         </li>
-                        <li>
+                        <li className={classes.facebook}>
                             <Facebook size={20} />
                         </li>
                         <li>
@@ -88,7 +88,7 @@ const Footer = props => {
                         </li>
                     </ul>
                 </div>
-                <Newsletter />
+                <Newsletter customProp={1234567}/>
             </div>
             <div className={classes.branding}>
                 <ul className={classes.legal}>

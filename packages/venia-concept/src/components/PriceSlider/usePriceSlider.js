@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const usePriceSlider = (props = {}) => {
-    const { filterApi, name, onApply, group } = props;
+    const { filterApi, onApply, group } = props;
 
     const { addItem } = filterApi;
     const [price, setPrice] = useState([15, 120]);
@@ -26,19 +26,17 @@ export const usePriceSlider = (props = {}) => {
         setPrice(price);
     };
 
+    const priceResetHandler = () => {
+        setPrice([15, 120]);
+    };
+
     const priceAplyHandler = () => {
         addItem({
             group,
-            item: {
-                title: `${price[0]}-${price[1]}`,
-                value: `${price[0]}_${price[1]}`
-            }
+            item: itemPriceRange
         });
         if (typeof onApply === 'function') {
-            onApply(group, {
-                title: `${price[0]}-${price[1]}`,
-                value: `${price[0]}_${price[1]}`
-            });
+            onApply(group, itemPriceRange);
         }
     };
 
@@ -47,6 +45,7 @@ export const usePriceSlider = (props = {}) => {
         changeMaxPriceHandler,
         rangeChangeHandler,
         priceAplyHandler,
+        priceResetHandler,
         price
     };
 };

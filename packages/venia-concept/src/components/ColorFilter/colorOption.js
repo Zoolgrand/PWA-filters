@@ -20,14 +20,10 @@ const ColorOption = props => {
         onApply({ group, item });
     };
 
+    const colorFilterOptionClass = isSelectedColor ? classes.root_active : classes.root;
+
     return (
-        <div
-            className={
-                !isSelectedColor
-                    ? classes.colorFilterOptionWrap
-                    : `${classes.colorFilterOptionWrap} ${classes.activeColorBorder}`
-            }
-        >
+        <div className={colorFilterOptionClass}>
             <div
                 onClick={changeColorFilterHandler}
                 className={classes.colorFilterOption}
